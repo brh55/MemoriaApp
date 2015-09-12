@@ -11,7 +11,7 @@ if (Meteor.isClient) {
 }
 
 Router.configure({
-  layoutTemplate: 'login',
+  layoutTemplate: 'app-body',
   notFoundTemplate: 'notFound'
 });
 
@@ -74,22 +74,10 @@ Router.map(function() {
     path: '/home',
     layoutTemplate: 'home'}
   );
-  this.route('login', {
-    path: '/'
-    // onBeforeAction: function () {
-    //     if (! Meteor.user()) {
-    //         if (Meteor.loggingIn()) {
-    //             Router.go('home');
-    //         } else{
-    //         }
-    //     }
-    // }
-  });
+  this.route('login');
   this.route('recipes');
   this.route('bookmarks');
   this.route('about');
   this.route('recipe', {path: '/recipes/:name'});
   this.route('admin', { layoutTemplate: null });
 });
-
-Router.onBeforeAction('dataNotFound', {only: 'recipe'});
