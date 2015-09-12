@@ -13,8 +13,6 @@ Template.create.events({
         var description = event.target.description.value;
         var owner = Meteor.userId();
 
-        console.log(owner);
-        console.log(Meteor.user());
         Memories.insert({
             title: title,
             description: description,
