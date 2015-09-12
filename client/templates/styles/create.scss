@@ -1,7 +1,7 @@
 ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
 li {
@@ -9,19 +9,100 @@ li {
 }
 
 .header-create {
-    background: #51c6ed;
-    border-bottom: 1px solid #E3E3E3;
     padding-top: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: #92d86c;
+    background-size: cover;
 
     h2 {
-        color: #2B8BAA;
-        font-weight: 300;
-        margin-top: 0px;
+        position: relative;
+        margin-top: 0;
+        color: white;
         font-size: 3em;
-        position: relative
+        font-weight: 300;
     }
 }
 
 .create-form {
     padding-top: 8%;
+
+    label {
+        margin-top: 20px;
+        color: #6a6161;
+        font-family: "Lato";
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: .008em;
+    }
+}
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #51c6ed;
+    box-shadow: initial;
+}
+
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea.materialize-textarea,
+.form-control {
+    padding: 2px 4px;
+    color: #a4a4a4;
+    color: #6a6161;
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .008em;
+
+    text-spacing: .009em;
+}
+
+
+.btn-create {
+    background: #72b6e7;
+    box-shadow: initial;
+
+    &:hover,
+    &:focus {
+        color: #2A6996;
+        background: #579bcb;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.btn-back {
+    background: #e78372;
+    box-shadow: initial;
+
+    &:hover,
+    &:focus {
+        color: #B75B4B;
+        background: #cb6a5a;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: initial;
 }
