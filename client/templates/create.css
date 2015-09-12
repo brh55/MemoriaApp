@@ -1,0 +1,22 @@
+.nopad {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.pad{
+    background-image: url("https://static.pexels.com/photos/8183/pexels-photo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   height: 150px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
