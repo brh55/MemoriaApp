@@ -1,18 +1,19 @@
 <template name="login">
-	<div class="container-fluid text-center">
-		<div class="row">
-			<div class="col-md-6 col-offset-3 text-center">
-				<h1>Memoria</h1>
+	<div class="container-fluid text-center template-wrapper login">
+		<section class="text-login-wrap">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="logo animated fadeIn">MEMORIA</h1>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<h1 class="moto">Bring Your Memories To Life</h1>
-		</div>
-		<div class="row navbar-fixed-bottom add">
-			<div class="col-md-6 col-offset-3 text-center">
-				{{> loginButtons}}
+			<div class="row">
+				<h3>Bring Your Memories To Life</h3>
 			</div>
-  		</div>
+			<div class="row">
+				<div class="col-lg-12">
+					{{> loginButtons}}
+				</div>
+	  		</div>
+	  	</section>
 	</div>
-    {{> main}}}}
 </template>

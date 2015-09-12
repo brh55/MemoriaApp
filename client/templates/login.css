@@ -1,44 +1,61 @@
-@import url(https://fonts.googleapis.com/css?family=Rochester);
-
-html,
-body {
-/*css for full size background image*/
-  background: url("http://placehold.it/350x150") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  
-  height: 100%;
-  background-color: #060;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
- 
+.template-wrapper.login {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    /*css for full size background image*/
+    background: url("/assets/img/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
-.add{
-	padding-bottom: 10px;
+.text-login-wrap {
+    height: 100%;
 }
 
-.moto{
-font-family: 'Rochester', cursive;
-
+.text-login-wrap > .row {
+    position: relative;
+    top: 25%;
 }
 
-.login-buttons-dropdown-align- .login-button .single-login-button, #login-buttons #login-buttons-facebook{
-	background-color: white;
-	color: #3B5998;
-	border-radius: 0;
-	border-color: white;
-	width: 250px;
-	height: 90px;
-	font-size: 22px;
+.logo {
+    color: rgba(235, 235, 235, .88);
+    font-size: 5em;
+    letter-spacing: 3px;
 }
 
-#login-buttons .login-image{
-	display: none;
+.add {
+    padding-bottom: 10px;
+}
+
+.login-buttons-dropdown-align- .login-button .single-login-button,
+#login-buttons #login-buttons-facebook {
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-color: white;
+    border-radius: 0;
+    font-family: lato;
+    font-size: 22px;
+    font-weight: 100;
+    transition: all .2s ease;
+    text-transform: uppercase;
+    background-color: clear;
+}
+
+#login-buttons #login-buttons-facebook:hover {
+    border-color: #744c04;
+    color: #744c04;
+    opacity: .8;
+    background-color: #f1bd5d;
+}
+
+#login-buttons .login-image {
+    display: none;
 }
 
 
-
+.text-login-wrap {
+    top: 50%;
+}
