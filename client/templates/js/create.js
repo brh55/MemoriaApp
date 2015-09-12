@@ -5,18 +5,37 @@ Template.create.helpers({
     }
 });
 
+Template.peopleImages.helpers({
+    fbPics: function () {
+        var users = Meteor.users.find({});
+
+        var lim = users.length;
+        var userArray = [];
+
+        for (i = 0; i < lim; i++) {
+        }
+    }
+})
+
 Template.create.events({
     "submit form": function (event) {
         event.preventDefault();
 
         var title = event.target.title.value;
         var description = event.target.description.value;
+        var location = event.target.location.value;
+        var tag = event.target.tag.value;
         var owner = Meteor.userId();
+        var date = new Date(milliseconds);
 
         Memories.insert({
             title: title,
             description: description,
-            owner: owner
+            owner: owner,
+            createdAt: date,
+            people: [],
+            mainLocation: location,
+            tag: tag
         });
     }
 });

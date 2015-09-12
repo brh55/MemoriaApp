@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+.header-create {
+    background: #51c6ed;
+    border-bottom: 1px solid #E3E3E3;
+    padding-top: 10%;
+
+    h2 {
+        color: #2B8BAA;
+        font-weight: 300;
+        margin-top: 0px;
+        font-size: 3em;
+        position: relative
+    }
+}
+
+.create-form {
+    padding-top: 8%;
+}

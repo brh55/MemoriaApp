@@ -21,8 +21,10 @@ Accounts.onCreateUser(function(options, user) {
 
     user.profile = options.profile;
 
+    user.name = user.services.facebook.name;
     return user;
 });
+
 
 // Helper Methods
 var getFbPicture = function(facebookId) { // make async call to grab the picture from facebook

@@ -1,0 +1,116 @@
+// Color Variables
+$grey-shade: #6a6161;
+$transp-white: rgba(235, 235, 235, .80);
+$blue: #51c6ed;
+$font-grey: #545454;
+$no-grey: #E4E4E4;
+
+.memory-wrapper {
+    border: 1px solid $no-grey;
+
+    .col-lg-12 {
+        padding: 0;
+    }
+
+    .cover-photo {
+        position: relative;
+        height: 200px;
+        min-width: 100%;
+    }
+
+    .details {
+        padding: 20px 9px;
+        text-align: center;
+
+        h4 {
+            color: $blue;
+            font-size: 24px;
+            font-weight: 300;
+            padding: 5px 0 10px;
+        }
+
+        p {
+            color: $font-grey;
+            line-height: 26px;
+            font-size: 14px;
+            padding: 0 10px;
+        }
+    }
+}
+
+.memories {
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+
+            figure {
+                opacity: .8;
+                transform: scale(1.06);
+            }
+        }
+
+        figure {
+            text-decoration: none !important;
+            transition: all .4s ease;
+        }
+    }
+
+    h3 {
+        margin-bottom: 9px;
+    }
+
+    .location-wrap {
+        color: $transp-white;
+        font-size: 17px;
+        font-weight: 100;
+        letter-spacing: 4px;
+    }
+
+    .fa {
+        margin-right: 7px;
+    }
+
+    .info-wrap {
+        position: relative;
+        top: 37%; // adjusted slightly by look
+        text-align: center;
+    }
+
+    .title {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+
+        h3 {
+            position: relative;
+            color: white;
+            font-weight: 300;
+            line-height: 34px;
+            letter-spacing: -.01em;
+            text-transform: lowercase;
+        }
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+
+.memory-header {
+    background-color: #FF9E59;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 25px;
+
+    h2 {
+        margin-top: 0;
+        color: #FFECDF;
+        font-size: 20px;
+        padding: 19px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: lowercase;
+    }
+}
