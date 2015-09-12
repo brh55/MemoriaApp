@@ -17,3 +17,6 @@ mdg:geolocation
 iron:router
 service-configuration
 oauth1
+twbs:bootstrap
+tanis:bootstrap-social
+fortawesome:fontawesome
