@@ -5,35 +5,39 @@ dataReadyHold = null;
 
 // Global subscriptions
 if (Meteor.isClient) {
-  Meteor.subscribe('news');
-  Meteor.subscribe('bookmarkCounts');
-  feedSubscription = Meteor.subscribe('feed');
+    Meteor.subscribe('news');
+    Meteor.subscribe('bookmarkCounts');
+    feedSubscription = Meteor.subscribe('feed');
 }
 
 Router.configure({
-  layoutTemplate: 'app-body',
-  notFoundTemplate: 'notFound'
+    layoutTemplate: 'app-body',
+    notFoundTemplate: 'notFound'
 });
 
 if (Meteor.isClient) {
-  // Keep showing the launch screen on mobile devices until we have loaded
-  // the app's data
-  dataReadyHold = LaunchScreen.hold();
+    // Keep showing the launch screen on mobile devices until we have loaded
+    // the app's data
+    dataReadyHold = LaunchScreen.hold();
 }
 
 
-Router.map(function() {
-  this.route('home', {
-    path: '/home',
-    layoutTemplate: 'home'}
-  );
-  this.route('create',{
-    path:'/memories/create',
-    layoutTemplate:'create'
-  });
-    this.route('prev-memory',{
-    path:'/memories/prev-memory',
-    layoutTemplate:'prev-memory'
-  });
-  this.route('login');
+Router.map(function () {
+    this.route('home', {
+        path: '/home',
+        layoutTemplate: 'home'
+    });
+    this.route('create', {
+        path: '/memories/create',
+        layoutTemplate: 'create'
+    });
+    this.route('prev-memory', {
+        path: '/memories/prev-memory',
+        layoutTemplate: 'prev-memory'
+    });
+    this.route('upload', {
+        path: '/memories/upload',
+        layoutTemplate: 'upload'
+    });
+    this.route('login');
 });

@@ -1,10 +1,51 @@
+
 Template.main.helpers({
-    picture: function() {// helper function to display the pic on the page
+    picture: function () { // helper function to display the pic on the page
         var userProfile;
         userProfile = Meteor.user().profile;
 
         if (userProfile) { // logic to handle logged out state
-          return userProfile.picture;
+            return userProfile.picture;
         }
+    },
+    'photo': function () {
+        return Session.get('photo');
+    },
+    'address': function () {
+        return Session.get('location');
     }
 });
+
+Template.main.events({
+    'click .capture': function () {
+        console.log("Button Clicked.");
+        MeteorCamera.getPicture({}, function (error, data) {
+            console.log(data);
+            Session.set('photo', data);
+        });
+    }
+});
+
+Template.main.events({
+    'click .geo': function () {
+        var data = Geolocation.latLng()
+            //        var loc = Geolocation.currentLocation();
+        var lat = data.lat;
+        var lng = data.lng;
+        reverseGeocode.getLocation(lat, lng, function (location) {
+
+            //location is straight output from Google
+            //or you can now access it from reverseGeocode object
+            Session.set('location', reverseGeocode.getAddrStr());
+        });
+
+
+        setTimeout(function () {
+            var address = Session.get('location');
+            console.log(address);
+        }, 500);
+
+
+    }
+});
+
