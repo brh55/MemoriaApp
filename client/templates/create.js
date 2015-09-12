@@ -11,33 +11,14 @@ Template.create.events({
 
         var title = event.target.title.value;
         var description = event.target.description.value;
+        var owner = Meteor.userId();
 
-        console.log(description);
+        console.log(owner);
+        console.log(Meteor.user());
         Memories.insert({
             title: title,
             description: description,
-            owner: Meteor.userId()
+            owner: owner
         });
-        // function delay(ms) {
-        //     ms += new Date().getTime();
-        //     while (new Date() < ms) {}
-        // }
-        // delay(5000);
-        //      // Prevent default browser form submit
-        //      event.preventDefault();
-        //        
-        // 
-        //      // Get value from form element
-        //      var text = event.target.text;
-        //        console.log(text);
-        // 
-        //      // Insert a task into the collection
-        //      Memories.insert({
-        //        text: text,
-        //        createdAt: new Date() // current time
-        //      });
-        // 
-        //      // Clear form
-        //      event.target.text.value = "";
     }
 });

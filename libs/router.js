@@ -21,53 +21,6 @@ if (Meteor.isClient) {
   dataReadyHold = LaunchScreen.hold();
 }
 
-HomeController = RouteController.extend({
-  onBeforeAction: function() {
-    Meteor.subscribe('latestActivity', function() {
-      dataReadyHold.release();
-    });
-  }
-});
-
-FeedController = RouteController.extend({
-  onBeforeAction: function() {
-    this.feedSubscription = feedSubscription;
-  }
-});
-
-RecipesController = RouteController.extend({
-  data: function() {
-    return _.values(RecipesData);
-  }
-});
-
-BookmarksController = RouteController.extend({
-  onBeforeAction: function() {
-    if (Meteor.user())
-      Meteor.subscribe('bookmarks');
-    else
-      Overlay.open('authOverlay');
-  },
-  data: function() {
-    if (Meteor.user())
-      return _.values(_.pick(RecipesData, Meteor.user().bookmarkedRecipeNames));
-  }
-});
-
-RecipeController = RouteController.extend({
-  onBeforeAction: function() {
-    Meteor.subscribe('recipe', this.params.name);
-  },
-  data: function() {
-    return RecipesData[this.params.name];
-  }
-});
-
-AdminController = RouteController.extend({
-  onBeforeAction: function() {
-    Meteor.subscribe('news');
-  }
-});
 
 Router.map(function() {
   this.route('home', {
@@ -78,10 +31,9 @@ Router.map(function() {
     path:'/memories/create',
     layoutTemplate:'create'
   });
+    this.route('prev-memory',{
+    path:'/memories/prev-memory',
+    layoutTemplate:'prev-memory'
+  });
   this.route('login');
-  this.route('recipes');
-  this.route('bookmarks');
-  this.route('about');
-  this.route('recipe', {path: '/recipes/:name'});
-  this.route('admin', { layoutTemplate: null });
 });
