@@ -74,6 +74,10 @@ Router.map(function() {
     path: '/home',
     layoutTemplate: 'home'}
   );
+  this.route('create',{
+    path:'/memories/create',
+    layoutTemplate:'create'
+  });
   this.route('login');
   this.route('recipes');
   this.route('bookmarks');
