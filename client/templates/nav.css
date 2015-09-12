@@ -1,0 +1,38 @@
+/* Navigation Css */
+.navbar-toggle .icon-bar {
+    background-color: #A97619;
+}
+
+.navbar-toggle .icon-bar:nth-child(2) {
+    width: 14px;
+}
+
+.navbar-toggle .icon-bar:nth-child(3) {
+    width: 18px;
+}
+
+.navbar-toggle .icon-bar:nth-child(4) {
+    width: 22px;
+}
+
+
+.logo-header {
+    display: inline-block;
+    font-size: 20px;
+    width: 100%;
+    margin-right: -13%;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.navbar-toggle {
+    width: 10%;
+}
+
+.navbar-toggle:hover {
+    animation: pulse .4s ease-in;
+}
+
+.navbar-header {
+    border-bottom: 1px solid #E9E9E9;
+}

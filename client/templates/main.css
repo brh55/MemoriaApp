@@ -1,0 +1,13 @@
+/** Main Styles */
+.main-wrap {
+    text-align: center;
+    padding-top: 5%;
+    background: url('assets/img/bg-main1.jpg');
+    background-size: cover;
+}
+
+.profile-wrap img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 150px;
+}

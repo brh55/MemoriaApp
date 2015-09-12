@@ -1,5 +1,7 @@
 <template name="appBody">
-  <div class="wrapper-welcome">
-    {{> login}}
-    </div>
+    {{#unless currentUser}}
+        {{> login}}
+    {{else}}
+        {{> home}}
+    {{/unless}}
 </template>

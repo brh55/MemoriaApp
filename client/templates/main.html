@@ -1,28 +1,27 @@
 <template name="main">
-
-<section class="profile-wrap">
-    <div class="row">
-        <div class="col-lg-12">
-            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p200x200/11698539_10153417340894798_7067417594905759611_n.jpg?oh=c3dd6ecb0614af6444a3c3bdd365bb01&oe=56A8FC6A&__gda__=1450059261_f5a77b1b077f327c0ce82c8e7a031511">
-            <span class="name">{{currentUser.name}}</span>
+<main class="main-wrap">
+    <section class="profile-wrap">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p200x200/11698539_10153417340894798_7067417594905759611_n.jpg?oh=c3dd6ecb0614af6444a3c3bdd365bb01&oe=56A8FC6A&__gda__=1450059261_f5a77b1b077f327c0ce82c8e7a031511">
+                <span class="name">{{currentUser.name}}</span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="get-started">
-    <div class="row">
-        <div class="col-lg-12">
-            <h2>Let's get Started</h2>
+    <section class="get-started">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Let's get Started</h2>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- need condition to check if user has existing memories -->
-<section class="memories">
-    <div class="row">
-        {{> memory}}
-    </div>
-</section>
-
-
+    <!-- need condition to check if user has existing memories -->
+    <section class="memories">
+        <div class="row">
+            {{> memory}}
+        </div>
+    </section>
+</main>
 </template>
