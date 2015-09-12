@@ -1,0 +1,19 @@
+<template name="searchBox">
+    {{> esInput index="userList" placeholder="Search..." }}
+
+    <ul>
+        {{#esEach index="userList"}}
+            <li>Name of the player: {{name}}</li>
+        {{/esEach}}
+
+        {{> esLoadMoreButton index="userList"}}
+
+        {{#ifEsHasNoResults index="userList"}}
+            <div class="no-results">No results found!</div>
+        {{/ifEsHasNoResults}}
+
+        {{#ifEsIsSearching index="userList"}}
+                <div>Loading...</div>
+        {{/ifEsIsSearching}}
+    </ul>
+</template>
