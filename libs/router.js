@@ -70,8 +70,21 @@ AdminController = RouteController.extend({
 });
 
 Router.map(function() {
-  this.route('home', {path: '/'});
-  this.route('feed');
+  this.route('home', {
+    path: '/home',
+    layoutTemplate: 'home'}
+  );
+  this.route('login', {
+    path: '/'
+    // onBeforeAction: function () {
+    //     if (! Meteor.user()) {
+    //         if (Meteor.loggingIn()) {
+    //             Router.go('home');
+    //         } else{
+    //         }
+    //     }
+    // }
+  });
   this.route('recipes');
   this.route('bookmarks');
   this.route('about');

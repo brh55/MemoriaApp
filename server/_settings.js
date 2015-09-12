@@ -21,14 +21,17 @@ if (ServiceConfiguration.configurations.find({service: 'facebook'}).count()===0)
   });
 }
 
-Accounts.onCreateUser(function(options,user) {
+Accounts.onCreateUser(function(options, user) {
   check(options, Object);
   check(user, Object);
 
   options.profile.email = user.services.facebook.email;
   options.profile.facebookId = user.services.facebook.id;
-  options.profile.picture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
+  var pictureUrl = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
 
+  var result = Meteor.http.get(options.profile.picture);
+
+  options.profile.pictureUrl = result.data.data.url;
   user.profile = options.profile;
 
   return user;
