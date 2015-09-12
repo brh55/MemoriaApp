@@ -11,7 +11,7 @@ if (Meteor.isClient) {
 }
 
 Router.configure({
-  layoutTemplate: 'appBody',
+  layoutTemplate: 'login',
   notFoundTemplate: 'notFound'
 });
 
