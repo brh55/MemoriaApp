@@ -8,3 +8,8 @@ Template.main.helpers({
         }
     }
 });
+
+UserAccounts = new Mongo.Collection('users');
+
+// Search Engine Feature
+UserAccounts.initEasySearch('profile.name');
