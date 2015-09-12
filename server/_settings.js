@@ -7,17 +7,29 @@ if (typeof Meteor.settings === 'undefined')
 
 _.defaults(Meteor.settings, {
   twitter: {
-    consumerKey: "PLfrg2bUh0oL0asi3R2fumRjm", 
+    consumerKey: "PLfrg2bUh0oL0asi3R2fumRjm",
     secret: "sRI8rnwO3sx7xUAxNWTX0WEDWph3WEBHu6tTdJYQ5wVrJeVCCt"
   }
 });
 
-ServiceConfiguration.configurations.upsert(
-  { service: "twitter" },
-  {
-    $set: {
-      consumerKey: Meteor.settings.twitter.consumerKey,
-      secret: Meteor.settings.twitter.secret
-    }
-  }
-);
+
+if (ServiceConfiguration.configurations.find({service: 'facebook'}).count()===0) {
+  ServiceConfiguration.configurations.insert({
+    service: "facebook",
+    appId: "475497805963919",
+    secret: "bf4d37d1bd2def52bd34ff23f357706e"
+  });
+}
+
+Accounts.onCreateUser(function(options,user) {
+  check(options, Object);
+  check(user, Object);
+
+  options.profile.email = user.services.facebook.email;
+  options.profile.facebookId = user.services.facebook.id;
+  options.profile.picture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
+
+  user.profile = options.profile;
+
+  return user;
+});
