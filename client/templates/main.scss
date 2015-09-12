@@ -1,0 +1,64 @@
+/** Main Styles */
+.profile-wrap {
+    text-align: center;
+    padding-top: 8%;
+    background: #e6e6e6;
+    border-bottom: 1px solid #E3E3E3;
+
+    img {
+        max-width: 150px;
+        max-height: 150px;
+        border-radius: 150px;
+    }
+}
+
+.get-started h2 {
+    color: #9a9a9a;
+    font-weight: 300;
+    margin-top: 0px;
+    font-size: 3em;
+}
+
+
+.quick-buttons {
+    li {
+        margin: 6px 6px 15px;
+        border-radius: 100px;
+
+        .fa-inverse {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .fa-stack-1x {
+            font-size: 0.6em;
+        }
+
+        a {
+            transition: color .5s ease;
+        }
+
+        .plus {
+            color: #92d86c;
+
+            &:hover {
+                color: #83C560;
+            }
+        }
+
+        .camera {
+            color: #ff8c6c;
+
+            &:hover {
+                color: #E27050;
+            }
+        }
+
+        .geolocate {
+            color: #51c6ed;
+
+            &:hover {
+                color: #40ACD0;
+            }
+        }
+    }
+}

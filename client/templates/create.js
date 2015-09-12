@@ -12,7 +12,6 @@ Template.create.events({
         var title = event.target.title.value;
         var description = event.target.description.value;
 
-        console.log(description);
         Memories.insert({
             title: title,
             description: description,
