@@ -1,4 +1,6 @@
-Template.upload.events({
+var Highlights = new Mongo.Collection('highlights');
+
+Template.quickButtons.events({
     'click .mic': function () {
         //create a web audio context in your application
         var audioContext = new AudioContext();
@@ -30,5 +32,33 @@ Template.upload.events({
                 doSomeFancyStuffWith(audioData);
             }
         });
+    },
+    'click .capture': function () {
+        MeteorCamera.getPicture({}, function (error, data) {
+            Session.set('photo', data);
+
+            var date = new Date();
+            var user = Meteor.userId();
+
+            Highlights.insert({
+                createdAt: date,
+                media: data,
+                mediaType: 'Photo',
+                memoryId: Router.current().params.id,
+                owner: user
+            });
+
+            console.log(data);
+
+        });
+    }
+});
+
+Template.quickButtons.helpers({
+    'photo': function () {
+        return Session.get('photo');
+    },
+    'address': function () {
+        return Session.get('location');
     }
 });

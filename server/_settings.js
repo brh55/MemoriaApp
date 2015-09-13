@@ -11,3 +11,4 @@ if (ServiceConfiguration.configurations.find({service: 'facebook'}).count()===0)
 
 // Additional Collections
 Memories = new Mongo.Collection('memories');
+Highlights = new Mongo.Collection('highlights');

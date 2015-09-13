@@ -7,20 +7,6 @@ Template.main.helpers({
         if (userProfile) { // logic to handle logged out state
             return userProfile.picture;
         }
-    },
-    'photo': function () {
-        return Session.get('photo');
-    },
-    'address': function () {
-        return Session.get('location');
-    }
-});
-
-Template.main.events({
-    'click .capture': function () {
-        MeteorCamera.getPicture({}, function (error, data) {
-            Session.set('photo', data);
-        });
     }
 });
 

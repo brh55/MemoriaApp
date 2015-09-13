@@ -76,7 +76,8 @@ textarea.materialize-textarea,
 }
 
 
-.btn-create {
+.btn-create,
+.camera-popup button {
     background: #72b6e7;
     box-shadow: initial;
 
@@ -99,6 +100,18 @@ textarea.materialize-textarea,
         background: #cb6a5a;
         box-shadow: none;
         outline: none;
+    }
+}
+
+.camera-popup {
+    width: 50%;
+}
+
+.camera-popup button {
+    border: none;
+
+    &.cancel {
+        background-color: #B75B4B;
     }
 }
 
