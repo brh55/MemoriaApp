@@ -23,5 +23,5 @@ Template.memoryTimeline.helpers({
         var paramsId = Router.current().params.id;
         var memory = Memories.find({_id: paramsId}).fetch();
         return memory[0].coverPhoto;
-    }
+    },
 });

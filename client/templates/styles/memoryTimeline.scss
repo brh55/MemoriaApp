@@ -10,11 +10,6 @@
         }
     }
 
-    // Bad top fixes, but need it for presentation
-    .top-head {
-        margin-top: -52px;
-    }
-
     .back-wrap {
         float: left;
         padding: 0px 30px;
@@ -67,7 +62,6 @@
 
     .row {
         margin-top: 30px;
-        background-color: #EDEDED;
         border-radius: 7px;
     }
 
@@ -78,6 +72,13 @@
             width: 62px;
             padding-top: 5px;
         }
+    }
+
+    .col-lg-11 {
+        background-color: #EDEDED;
+        width: 88%;
+        float: right;
+        border-radius: 13px;
     }
 
     img {
@@ -94,6 +95,16 @@
     }
     .content {
         padding: 30px;
+    }
+
+    .image-status {
+        p {
+            font-color: white;
+        }
+
+        .col-lg-11 {
+            background-color: #FFB9A6;
+        }
     }
 }
 
