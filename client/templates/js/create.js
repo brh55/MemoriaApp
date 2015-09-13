@@ -1,3 +1,5 @@
+Meteor.subscribe("userList");
+
 // This code only runs on the client
 Template.create.helpers({
     memories: function () {
@@ -7,17 +9,10 @@ Template.create.helpers({
 
 Template.peopleImages.helpers({
     fbPics: function () {
-        var users = Meteor.users.find({});
-
-        console.log(users);
-
-        var lim = users.length;
+        var users = Meteor.call('getUsers');
         var userArray = [];
 
-
         for (i = 0; i < lim; i++) {
-                            console.log('iterated');
-
             userArray.push(
                 { pictureUrl: users[i].profile.picture }
             );

@@ -40,14 +40,10 @@ Template.main.events({
 
         setTimeout(function () {
             var address = Session.get('location');
-            console.log(address);
         }, 500);
-
-
     }
 });
 
-Meteor.subscribe("currentUserData");
 
 EasySearch.createSearchIndex('userList', {
     'collection': Meteor.users,
@@ -58,7 +54,6 @@ EasySearch.createSearchIndex('userList', {
         'sortBy': 'name'
     },
     'query': function(searchString, opts) {
-        console.log('hi');
         var query = EasySearch.getSearcher(this.use).defaultQuery(this, searchString);
 
         return query;

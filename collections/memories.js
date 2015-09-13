@@ -1,2 +1,1 @@
 Memories = new Mongo.Collection('memories');
-

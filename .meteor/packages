@@ -5,7 +5,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 fourseven:scss
 fastclick
@@ -24,3 +23,4 @@ materialize:materialize
 jaymc:google-reverse-geocode
 matteodem:easy-search
 meteorhacks:search-source
+autopublish

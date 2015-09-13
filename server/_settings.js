@@ -3,6 +3,8 @@
 // To configure your own Twitter keys, see:
 //   https://github.com/meteor/meteor/wiki/Configuring-Twitter-in-Local-Market
 
+userList = new Mongo.Collection('userList');
+
 if (ServiceConfiguration.configurations.find({service: 'facebook'}).count()===0) {
     ServiceConfiguration.configurations.insert({
         service: "facebook",
@@ -22,6 +24,7 @@ Accounts.onCreateUser(function(options, user) {
     user.profile = options.profile;
 
     user.name = user.services.facebook.name;
+
     return user;
 });
 
@@ -44,8 +47,3 @@ var getFbPicture = function(facebookId) { // make async call to grab the picture
 
     return result.data.data.url; // return the picture's url
 };
-
-
-Meteor.publish("directory", function () {
-  return Meteor.users.find({}, {fields: {profile: 1}});
-});
