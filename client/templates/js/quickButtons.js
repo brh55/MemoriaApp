@@ -70,7 +70,7 @@ Template.quickButtons.helpers({
 Template.highlight.helpers({
     highlight: function () {
         var paramsId = Router.current().params.id;
-        var highlights = Highlights.find({memoryId: paramsId}).fetch();
+        var highlights = Highlights.find({memoryId: paramsId}, { sort: {createdAt: -1}}).fetch();
 
         for (i = 0; i < highlights.length; i++) {
             if (highlights[i].mediaType === 'Photo') {
@@ -78,6 +78,12 @@ Template.highlight.helpers({
             }
             if (highlights[i].mediaType === 'Text') {
                 highlights[i].status = true;
+            }
+            if (highlights[i].mediaType === 'Video') {
+                highlights[i].video = true;
+            }
+            if (highlights[i].mediaType === 'Audio') {
+                highlights[i].audio = true;
             }
         }
 

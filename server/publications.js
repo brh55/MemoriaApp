@@ -14,7 +14,9 @@ Meteor.publish('memories', function () {
 
 
 Meteor.publish('highlights', function () {
-  return Highlights.find();
+  return Highlights.find({}, {
+    sort: {createdAt: -1}
+  });
 });
 
 // Meteor.publish('news', function() {
