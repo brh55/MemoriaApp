@@ -9,11 +9,20 @@ Template.peopleImages.helpers({
     fbPics: function () {
         var users = Meteor.users.find({});
 
+        console.log(users);
+
         var lim = users.length;
         var userArray = [];
 
+
         for (i = 0; i < lim; i++) {
+                            console.log('iterated');
+
+            userArray.push(
+                { pictureUrl: users[i].profile.picture }
+            );
         }
+        return userArray
     }
 })
 

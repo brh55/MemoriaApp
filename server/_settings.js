@@ -44,3 +44,8 @@ var getFbPicture = function(facebookId) { // make async call to grab the picture
 
     return result.data.data.url; // return the picture's url
 };
+
+
+Meteor.publish("directory", function () {
+  return Meteor.users.find({}, {fields: {profile: 1}});
+});

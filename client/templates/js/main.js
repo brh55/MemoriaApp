@@ -18,9 +18,7 @@ Template.main.helpers({
 
 Template.main.events({
     'click .capture': function () {
-        console.log("Button Clicked.");
         MeteorCamera.getPicture({}, function (error, data) {
-            console.log(data);
             Session.set('photo', data);
         });
     }
@@ -51,13 +49,6 @@ Template.main.events({
 
 Meteor.subscribe("currentUserData");
 
-// EasySearch.createSearchIndex('users', {
-//   field: 'name',
-//   collection: Meteor.users,
-//   use: 'mongo-db'
-// });
-// 
-
 EasySearch.createSearchIndex('userList', {
     'collection': Meteor.users,
     'field': 'name',
@@ -73,15 +64,3 @@ EasySearch.createSearchIndex('userList', {
         return query;
     }
 });
-
-// SearchSource.defineSource('users', profile, function (searchText, options) {
-//     var options = {sort: {name: 1}, limit: 20};
-
-//     if(searchText) {
-//         var selector = [
-//     ]};
-//     return Packages.find(selector, options).fetch();
-//   } else {
-//     return Packages.find({}, options).fetch();
-//   }
-// }
