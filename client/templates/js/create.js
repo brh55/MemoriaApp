@@ -16,6 +16,7 @@ Template.create.events({
         var title = event.target.title.value;
         var description = event.target.description.value;
         var tag = event.target.tag.value;
+        var coverPhoto = event.target.coverPhoto.value;
         var owner = Meteor.userId();
         var date = new Date();
 
@@ -24,6 +25,7 @@ Template.create.events({
             description: description,
             owner: owner,
             createdAt: date,
+            coverPhoto: coverPhoto,
             people: [],
             tag: tag
         }, function(err, id) {
