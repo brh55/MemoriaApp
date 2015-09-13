@@ -1,4 +1,6 @@
-Meteor.subscribe("userList");
+Memories = new Mongo.Collection('memories');
+
+Meteor.subscribe("memories");
 
 // This code only runs on the client
 Template.create.helpers({
@@ -7,30 +9,15 @@ Template.create.helpers({
     }
 });
 
-Template.peopleImages.helpers({
-    fbPics: function () {
-        var users = Meteor.call('getUsers');
-        var userArray = [];
-
-        for (i = 0; i < lim; i++) {
-            userArray.push(
-                { pictureUrl: users[i].profile.picture }
-            );
-        }
-        return userArray
-    }
-})
-
 Template.create.events({
     "submit form": function (event) {
         event.preventDefault();
 
         var title = event.target.title.value;
         var description = event.target.description.value;
-        var location = event.target.location.value;
         var tag = event.target.tag.value;
         var owner = Meteor.userId();
-        var date = new Date(milliseconds);
+        var date = new Date();
 
         Memories.insert({
             title: title,
@@ -38,8 +25,14 @@ Template.create.events({
             owner: owner,
             createdAt: date,
             people: [],
-            mainLocation: location,
             tag: tag
+        }, function(err, id) {
+            if (id) {
+                Router.go('memory', {
+                    id: id
+                });
+            }
         });
+
     }
 });

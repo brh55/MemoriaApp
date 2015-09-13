@@ -1,5 +1,9 @@
+Meteor.subscribe('memories');
+
 Template.memory.helpers({
     coverPhoto: function() {
+        var cover = Memories.find().fetch();
+        console.log(Meteor.userId());
         // Temporarily
         return 'https://unsplash.com/photos/uXzNVOZT5no/download';
     },

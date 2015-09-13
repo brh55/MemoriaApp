@@ -1,15 +1,3 @@
-var feedSubscription;
-// Test Comment sadsa
-// Handle for launch screen possibly dismissed from app-body.js
-dataReadyHold = null;
-
-// Global subscriptions
-if (Meteor.isClient) {
-    Meteor.subscribe('news');
-    Meteor.subscribe('bookmarkCounts');
-    feedSubscription = Meteor.subscribe('feed');
-}
-
 Router.configure({
     layoutTemplate: 'app-body',
     notFoundTemplate: 'notFound'
@@ -21,6 +9,11 @@ if (Meteor.isClient) {
     dataReadyHold = LaunchScreen.hold();
 }
 
+MemoriesController = RouteController.extend({
+  onBeforeAction: function() {
+    Meteor.subscribe('memories', this.params.id);
+  }
+});
 
 Router.map(function () {
     this.route('home', {
@@ -30,6 +23,10 @@ Router.map(function () {
     this.route('create', {
         path: '/memories/create',
         layoutTemplate: 'create'
+    });
+    this.route('memory', {
+        path: 'memories/:id',
+        layoutTemplate: 'memoryTimeline'
     });
     this.route('prev-memory', {
         path: '/memories/prev-memory',

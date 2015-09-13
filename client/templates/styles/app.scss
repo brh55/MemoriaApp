@@ -24,6 +24,9 @@ h3 {
     letter-spacing: 2px;
 }
 
+.iphone-6 {
+    background-image: url('/assests/img/chrome-iphone6.jpg');
+}
 
 // base wraps
 .template-wrapper {
@@ -66,5 +69,16 @@ html {
         &.hover {
             background-color: #6fa5e7;
         }
+    }
+}
+// Global styles for used throughout
+
+.facebook-small-icon {
+    margin: 30px 10px;
+
+    img {
+        height: 35px;
+        width: 35px;
+        border-radius: 75px;
     }
 }
