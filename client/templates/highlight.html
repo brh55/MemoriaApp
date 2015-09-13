@@ -1,41 +1,17 @@
 <template name="highlight">
     <div class="highlight-wrapper">
-        <div class="grid">
-            <div class="grid-item">
-                <li class="facebook-small-icon"><img src="http://graph.facebook.com/10207913617018227/picture/?type=large"></li>
-                <section class="content">
-                    Text message here looks like.
-                </section>
-            </div>
-            <div class="grid-item">
-                <li class="facebook-small-icon"><img src="http://graph.facebook.com/10207913617018227/picture/?type=large"></li>
-                <section class="content">
-                    Text message here looks like.
-                </section>
-            </div>
-            <div class="grid-item">
-                <li class="facebook-small-icon"><img src="http://graph.facebook.com/10207913617018227/picture/?type=large"></li>
-                <section class="content">
-                    Text message here looks like.
-                </section>
-            </div>
-            <div class="grid-item">
-                <li class="facebook-small-icon"><img src="http://graph.facebook.com/10207913617018227/picture/?type=large"></li>
-                <section class="content">
-                    Text message here looks like.
-                </section>
-            </div>
-        </div>
+        {{#each highlight}}
+            {{#if image}}
+                {{> imageHighlight}}
+            {{/if}}
+
+            {{#if video}}
+
+            {{/if}}
+
+            {{#if status}}
+                {{> statusHighlight}}
+            {{/if}}
+        {{/each}}
     </div>
-
-
-
-    {{#if image}}
-
-    {{/if}}
-
-    {{#if video}}
-
-    {{/if}}
-
 </template>

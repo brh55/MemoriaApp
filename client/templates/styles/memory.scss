@@ -6,10 +6,10 @@ $font-grey: #545454;
 $no-grey: #E4E4E4;
 
 .memory-wrapper {
-    border: 1px solid $no-grey;
-
     .col-lg-12 {
         padding: 0;
+        border: 1px solid #E9E9E9;
+        margin-bottom: 30px;
     }
 
     &:not(:first-child) {

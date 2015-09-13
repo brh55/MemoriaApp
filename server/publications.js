@@ -12,6 +12,11 @@ Meteor.publish('memories', function () {
   });
 });
 
+
+Meteor.publish('highlights', function () {
+  return Highlights.find();
+});
+
 // Meteor.publish('news', function() {
 //   return News.find({}, {sort: {date: -1}, limit: 1});
 // });

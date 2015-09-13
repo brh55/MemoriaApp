@@ -8,7 +8,7 @@
                 </a>
             </div>
             <div class="logout-wrap">
-                {{ >loginButtons }}
+                {{ > loginButtons }}
             </div>
         </div>
         <section class="get-started">
@@ -28,7 +28,18 @@
         <h2>{{ quotes }}</h2>
     </section>
     <div class="container">
-        <div class="fb-avatars">
+<!--         {{#if post}}
+ -->        
+        <div class="status-wrap">
+            <i class="fa fa-bullhorn"></i>
+            <div class="posting">
+                <form class="status">
+                    <input type="text" name="text" placeholder="Status" />
+                </form>
+            </div>
+        </div>
+<!--         {{/if}}
+ -->        <div class="fb-avatars">
             <h6>the buddies:</h6> {{ > peopleImages }}
         </div>
 

@@ -1,4 +1,5 @@
 var Highlights = new Mongo.Collection('highlights');
+Meteor.subscribe('highlights');
 
 Template.quickButtons.events({
     'click .mic': function () {
@@ -39,17 +40,20 @@ Template.quickButtons.events({
 
             var date = new Date();
             var user = Meteor.userId();
+            var pic = Meteor.user().profile.picture;
+            var name = Meteor.user().profile.name;
+            var fbid = Meteor.user().profile.facebookId;
 
             Highlights.insert({
                 createdAt: date,
                 media: data,
                 mediaType: 'Photo',
                 memoryId: Router.current().params.id,
-                owner: user
+                owner: user,
+                ownerName: name,
+                ownerPic: pic,
+                fbookId: fbid
             });
-
-            console.log(data);
-
         });
     }
 });
@@ -60,5 +64,52 @@ Template.quickButtons.helpers({
     },
     'address': function () {
         return Session.get('location');
+    }
+});
+
+Template.highlight.helpers({
+    highlight: function () {
+        var paramsId = Router.current().params.id;
+        var highlights = Highlights.find({memoryId: paramsId}).fetch();
+
+        for (i = 0; i < highlights.length; i++) {
+            if (highlights[i].mediaType === 'Photo') {
+                highlights[i].image = true;
+            }
+            if (highlights[i].mediaType === 'Text') {
+                highlights[i].status = true;
+            }
+        }
+
+        return highlights;
+    }
+});
+
+Template.memoryTimeline.events({
+    "submit .status": function (event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+    var text = event.target.text.value;
+    var date = new Date();
+    var user = Meteor.userId();
+    var pic = Meteor.user().profile.picture;
+    var name = Meteor.user().profile.name;
+    var fbid = Meteor.user().profile.facebookId;
+
+     Highlights.insert({
+        createdAt: date,
+        media: text,
+        mediaType: 'Text',
+        memoryId: Router.current().params.id,
+        owner: user,
+        ownerName: name,
+        ownerPic: pic,
+        fbookId: fbid
+    });
+
+      // Clear form
+      event.target.text.value = "";
     }
 });
