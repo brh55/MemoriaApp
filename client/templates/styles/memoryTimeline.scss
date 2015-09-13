@@ -1,0 +1,56 @@
+.memoryTimeline-wrap {
+    padding-bottom: 30px;
+
+    &.profile-wrap {
+        border-bottom: none;
+    }
+    .get-started {
+        h2 {
+            color: white;
+        }
+    }
+
+    // Bad top fixes, but need it for presentation
+    .top-head {
+        margin-top: -52px;
+    }
+
+    .back-wrap {
+        float: left;
+        padding: 0px 30px;
+        margin-top: -10px;
+
+        a {
+            color: rgba(255,255,255, 0.8);
+        }
+    }
+}
+
+.fb-avatars {
+    text-align: right;
+    padding: 20px 0;
+    display: inline-block;
+    width: 100%;
+
+    .facebook-small-icon {
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    h6 {
+        color: #4B4B4B;
+        font-weight: 300;
+        font-size: 25px;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+}
+
+.timeline-header {
+    padding: 0 150px;
+    background-color: #E87474;
+
+    h2 {
+        line-height: 30px;
+    }
+}

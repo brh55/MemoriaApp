@@ -1,18 +1,17 @@
-<template name="main">
-<main class="main-wrap">
-    <section class="profile-wrap">
+<template name="timelineHeader">
+<section class="profile-wrap" style="background-image: url({{coverPhoto}}); background-size: cover;">
         <div class="row">
             <div class="logout-wrap">
                 {{ >loginButtons }}
             </div>
-            <div class="col-lg-12">
-                <img src="{{picture}}" alt="{{currentUser.profile.name}} - Profile Picture">
+            <div class="fb-icon-wrap">
+                {{ >peopleImages }}
             </div>
         </div>
         <section class="get-started">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>{{currentUser.profile.name}}</h2>
+                    <h2>{{title}}</h2>
                     <div class="button-wrapper">
                         <ul class="quick-buttons">
                             <li>
@@ -45,18 +44,4 @@
             </div>
         </section>
     </section>
-
-    </main>
-    <section class="memory-header">
-        <h2>Memories</h2>
-    </section>
-    <div class="container">
-
-        <!-- need condition to check if user has existing memories -->
-        <section class="memories">
-            <div class="row">
-                {{ > memory }}
-           </div>
-        </section>
-    </div>
 </template>

@@ -12,6 +12,10 @@ $no-grey: #E4E4E4;
         padding: 0;
     }
 
+    &:not(:first-child) {
+        margin-top: 35px;
+    }
+
     .cover-photo {
         position: relative;
         height: 200px;

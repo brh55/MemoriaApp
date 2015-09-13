@@ -7,7 +7,9 @@ Meteor.publish('users', function() {
 });
 
 Meteor.publish('memories', function () {
-  return Memories.find({owner: this.userId});
+  return Memories.find({owner: this.userId}, {
+    sort: {createdAt: -1}
+  });
 });
 
 // Meteor.publish('news', function() {

@@ -1,21 +1,26 @@
 <template name="memory">
+{{#each memories}}
     <article class="memory-wrapper animated fadeIn">
         <div class="col-lg-12">
-            <a href="/memories/{{id}}">
+            <a href="/memories/{{_id}}">
                 <figure class="cover-photo" style="background:url({{coverPhoto}}); background-size: cover;">
                     <div class="info-wrap">
                         <div class="title">
                             <h3>{{title}}</h3>
                             <div class="location-wrap">
                                 <i class="fa fa-map-marker animated pulse infinite"></i>
-                                <span class="location">{{location}}</span>
+                                {{#if location}}
+                                <span class="location">
+                                    {{location}}
+                                </span>
+                                {{/if}}
                             </div>
                         </div>
                     </div>
                 </figure>
             </a>
             <div class="details">
-                <h4>{{date}}</h4>
+                <h4>{{createdAt}}</h4>
                 <p>{{description}}</p>
 
                 <div class="additional-info">
@@ -24,4 +29,5 @@
             </div>
         </div>
     </article>
+{{/each}}
 </template>

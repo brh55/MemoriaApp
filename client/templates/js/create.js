@@ -2,13 +2,6 @@ Memories = new Mongo.Collection('memories');
 
 Meteor.subscribe("memories");
 
-// This code only runs on the client
-Template.create.helpers({
-    memories: function () {
-        return Memories.find({});
-    }
-});
-
 Template.create.events({
     "submit form": function (event) {
         event.preventDefault();
