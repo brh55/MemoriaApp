@@ -8,3 +8,11 @@ Our inspiration was sparked by the taunting reality of graduation, and the harsh
 2. Edit `_settings.js`, and enter your Facebook's developer secret key.
 3. `cd memoria`
 4. `meteor`
+
+### Notes
+About 60% Implemented
+Features not implemented:
+  - Seperate User Based Stories 
+  - Video Recordings Memories
+  - Audio Recordings
+  - Elastic Searching Friends/Invite
