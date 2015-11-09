@@ -10,7 +10,9 @@ Our inspiration was sparked by the taunting reality of graduation, and the harsh
 4. `meteor`
 
 ### Notes
-About 60% Implemented
+We ran across a lot of issues due to ignorance in the database, and limitations of the development stack.
+Thus, we only achieved about 60% implementation.
+
 Features not implemented:
   - Seperate User Based Stories 
   - Video Recordings Memories
